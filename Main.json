@@ -1,0 +1,20 @@
+{
+	"name": "GoombaManip",
+	"patches": [
+		{
+			"name": "Goomba Manipulation",
+			"symbolFile": "addresses.x",
+			"files": [
+				"goomba.c"
+			],
+			"hooks": [
+				{
+					"name": "GenerateNonRandomWorldMapEnemyNumber",
+					"type": "bl",
+					"EU_1": "0x808dff84"
+				}
+			],
+			"filePatches": []
+		}
+	]
+}
