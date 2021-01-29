@@ -1,13 +1,18 @@
-#define u32 unsigned int
+#include "goomba.h"
 
-#define BOT_LEFT 0x00
-#define TOP_LEFT 0x01
-#define TOP_RIGHT 0x02
-#define BOT_RIGHT 0x03
+u32 GenerateNonRandomWorldMapEnemyNumber(u32 range) {
+    u32 value;
 
-u32 GenerateRandomNumber(u32 max);
+    OSReport("Current World: %d\n", (int)currentWorld);
 
-u32 GenerateNonRandomWorldMapEnemyNumber(u32 max) {
-    GenerateRandomNumber(max);
-    return TOP_LEFT;
+    switch ((int)currentWorld) {
+        case 0:
+            value = GenerateRandomNumber(range);
+            value = TOP_LEFT;
+            break;
+        default:
+            value = GenerateRandomNumber(range);
+    }
+
+    return value;
 }
